@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   MapPin, 
   Calendar, 
+  Wallet,
   DollarSign, 
   Sparkles, 
   ArrowRight, 

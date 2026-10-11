@@ -26,34 +26,31 @@ export default function Navbar() {
           {/* Desktop Nav Links */}
           <div className="hidden md:flex items-center space-x-6">
             <button
+              onClick={() => setCurrentPage('planner')}
+              className={`text-sm font-semibold flex items-center gap-1.5 transition-colors ${
+                currentPage === 'planner'
+                  ? 'text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded-lg border border-indigo-500/20 shadow-sm'
+                  : 'text-slate-300 hover:text-white'
+              }`}
+            >
+              <Zap className="w-4 h-4 text-indigo-400" />
+              <span>AI Travel Planner</span>
+            </button>
+            <button
               onClick={() => setCurrentPage('landing')}
               className={`text-sm font-medium transition-colors ${
-                currentPage === 'landing' ? 'text-white' : 'text-slate-400 hover:text-slate-200'
+                currentPage === 'landing' ? 'text-white font-semibold' : 'text-slate-400 hover:text-slate-200'
               }`}
             >
               Overview
             </button>
-            <a
-              href="#features"
-              onClick={() => setCurrentPage('landing')}
-              className="text-sm font-medium text-slate-400 hover:text-slate-200 transition-colors"
-            >
-              Features
-            </a>
-            <a
-              href="#architecture"
-              onClick={() => setCurrentPage('landing')}
-              className="text-sm font-medium text-slate-400 hover:text-slate-200 transition-colors"
-            >
-              Architecture
-            </a>
             <button
               onClick={() => setCurrentPage('dashboard')}
               className={`text-sm font-medium transition-colors ${
                 currentPage === 'dashboard' ? 'text-indigo-400 font-semibold' : 'text-slate-400 hover:text-slate-200'
               }`}
             >
-              Dashboard
+              System Dashboard
             </button>
           </div>
 
@@ -77,19 +74,19 @@ export default function Navbar() {
               </span>
             </div>
 
-            {currentPage === 'landing' ? (
+            {currentPage !== 'planner' ? (
               <button
-                onClick={() => setCurrentPage('dashboard')}
-                className="inline-flex items-center px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-medium shadow-sm transition-all shadow-indigo-600/30 hover:shadow-indigo-600/50"
+                onClick={() => setCurrentPage('planner')}
+                className="inline-flex items-center px-4 py-2 rounded-xl bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white text-xs font-semibold shadow-md shadow-indigo-600/30 transition-all"
               >
-                Launch Dashboard <ArrowRight className="w-4 h-4 ml-1.5" />
+                Launch Planner <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
               </button>
             ) : (
               <button
-                onClick={() => setCurrentPage('landing')}
-                className="inline-flex items-center px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 text-sm font-medium transition-colors"
+                onClick={() => setCurrentPage('dashboard')}
+                className="inline-flex items-center px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 text-xs font-medium transition-colors"
               >
-                Back to Home
+                Inspect Telemetry
               </button>
             )}
           </div>

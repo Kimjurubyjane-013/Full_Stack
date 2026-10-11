@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
-import { Check, MapPin, Calendar, DollarSign, Sparkles } from 'lucide-react';
+import { Check, MapPin, Calendar, Wallet, Sparkles } from 'lucide-react';
 
 export default function Stepper({ currentStep, steps, onStepClick }) {
-  const icons = [MapPin, Calendar, DollarSign, Sparkles];
+  const icons = [MapPin, Calendar, Wallet, Sparkles];
 
   return (
     <div className="w-full max-w-3xl mx-auto py-4 px-2">

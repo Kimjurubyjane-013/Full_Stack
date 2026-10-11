@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Layers, Activity, Menu, X, ArrowRight, ShieldCheck, Zap } from 'lucide-react';
+import { Plane, Globe, Activity, Menu, X, ArrowRight, ShieldCheck, Zap } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 
 export default function Navbar() {
@@ -11,15 +11,15 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo & Brand */}
-          <div className="flex items-center space-x-3 cursor-pointer" onClick={() => setCurrentPage('landing')}>
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-violet-500 flex items-center justify-center text-white shadow-lg shadow-indigo-500/25">
-              <Layers className="w-5 h-5" />
+          <div className="flex items-center space-x-3 cursor-pointer" onClick={() => setCurrentPage('planner')}>
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-sky-500 via-indigo-600 to-violet-500 flex items-center justify-center text-white shadow-lg shadow-indigo-500/25">
+              <Plane className="w-5 h-5 -rotate-45" />
             </div>
             <div>
               <span className="text-lg font-bold text-white tracking-tight flex items-center gap-1.5">
-                ApexStack <span className="text-xs px-2 py-0.5 rounded bg-indigo-500/20 text-indigo-400 font-mono">v1.0</span>
+                VoyageAI <span className="text-xs px-2 py-0.5 rounded bg-sky-500/20 text-sky-400 font-mono">v1.0</span>
               </span>
-              <p className="text-[10px] text-slate-400 font-mono hidden sm:block">Full-Stack Enterprise Scaffold</p>
+              <p className="text-[10px] text-slate-400 font-mono hidden sm:block">AI-Powered Itinerary Architect</p>
             </div>
           </div>
 

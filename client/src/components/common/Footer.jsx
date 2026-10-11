@@ -6,9 +6,11 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div className="space-y-3 md:col-span-1">
-            <span className="text-lg font-bold text-white tracking-tight">ApexStack</span>
+            <span className="text-lg font-bold text-white tracking-tight flex items-center gap-2">
+              VoyageAI
+            </span>
             <p className="text-xs text-slate-400 leading-relaxed">
-              Modern full-stack monorepo scaffold designed with React 18, Vite 6, Tailwind CSS v3, and Express.js.
+              Autonomous multi-agent travel planning platform powered by React, Vite, Tailwind CSS, and Express.
             </p>
           </div>
 
@@ -53,7 +55,7 @@ export default function Footer() {
         </div>
 
         <div className="pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500">
-          <p>&copy; {new Date().getFullYear()} ApexStack Full-Stack Monorepo. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} VoyageAI &bull; Intelligent Multi-Agent Travel Planner. All rights reserved.</p>
           <div className="flex items-center space-x-1 mt-4 sm:mt-0">
             <span>Built with precision for team collaboration</span>
           </div>

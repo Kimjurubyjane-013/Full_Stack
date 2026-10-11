@@ -26,7 +26,7 @@ export default function Header() {
       {/* Title & Path */}
       <div>
         <div className="flex items-center space-x-2 text-xs text-slate-400 font-mono">
-          <span>ApexStack</span>
+          <span>VoyageAI</span>
           <span>/</span>
           <span className="text-indigo-400 uppercase">{activeTab}</span>
         </div>

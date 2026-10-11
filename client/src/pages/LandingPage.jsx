@@ -34,17 +34,17 @@ export default function LandingPage() {
         {/* Background glow decoration */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none -z-10" />
 
-        <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-medium mb-6">
-          <Zap className="w-3.5 h-3.5 text-indigo-400" />
-          <span>Full-Stack Monorepo Scaffold v1.0</span>
+        <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-400 text-xs font-semibold mb-6">
+          <Zap className="w-3.5 h-3.5 text-sky-400" />
+          <span>VoyageAI Multi-Agent Travel Planner v1.0</span>
         </div>
 
         <h1 className="text-4xl sm:text-6xl font-extrabold text-white tracking-tight max-w-4xl mx-auto leading-tight sm:leading-none">
-          High-Velocity Full-Stack Web Architecture
+          Autonomous AI-Powered Travel Architecture
         </h1>
 
         <p className="mt-6 text-base sm:text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
-          Engineered for developer productivity. Preconfigured with <span className="text-slate-200 font-semibold">React 18</span>, <span className="text-slate-200 font-semibold">Vite 6</span>, <span className="text-slate-200 font-semibold">Tailwind CSS</span>, and an enterprise <span className="text-slate-200 font-semibold">Express.js</span> backend.
+          Engineered for wanderlust. Four autonomous AI agents coordinate in real-time to design bespoke itineraries, find optimal flights, book boutique stays, and protect your budget.
         </p>
 
         {/* Action Buttons */}

@@ -28,13 +28,14 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
-          cache-dependency-path: '**/package-lock.json'
 
-      - name: Install dependencies
+      - name: Install client dependencies
         run: npm install
 
-      - name: Build client assets
+      - name: Run client tests
+        run: npm test
+
+      - name: Build client production bundle
         run: npm run build
 
   server-ci:
@@ -52,11 +53,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
-          cache-dependency-path: '**/package-lock.json'
 
-      - name: Install dependencies
+      - name: Install server dependencies
         run: npm install
 
-      - name: Run server test suite
+      - name: Run server syntax and test suite
         run: npm test
+
+      - name: Run server build check
+        run: npm run build

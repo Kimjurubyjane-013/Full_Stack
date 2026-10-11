@@ -183,6 +183,8 @@ export default function TravelPlannerPage() {
                 destination={itinerary.destination}
                 travelers={itinerary.travelers}
                 budget={itinerary.budget}
+                isFictionalDestination={itinerary.isFictionalDestination}
+                fictionalNote={itinerary.fictionalNote}
               />
             </div>
 

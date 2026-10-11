@@ -72,22 +72,30 @@ function simulateMultiAgentPipeline(input) {
   const vibe = input.vibe || 'Cultural';
   const departureCity = input.departureCity || 'San Francisco (SFO)';
 
+  const FICTIONAL_REALMS = [
+    'atlantis', 'narnia', 'mordor', 'westeros', 'hogwarts', 'gotham', 'wakanda',
+    'tatooine', 'middle earth', 'neverland', 'el dorado', 'shangri-la', 'wonderland'
+  ];
+  const isFictional = FICTIONAL_REALMS.some((realm) => destination.toLowerCase().includes(realm));
+
   // 1. Agent 1 Simulation (Logistics)
   const agent1Logistics = {
     flights: {
-      airline: 'ANA / Japan Airlines (or Major Carrier)',
-      route: `${departureCity} ➔ ${destination.split(',')[0]} International`,
+      airline: isFictional ? 'Mythic Deep-Sea / Aero Expedition Charter' : 'ANA / Japan Airlines (or Major Carrier)',
+      route: `${departureCity} ➔ ${destination.split(',')[0]} ${isFictional ? 'Gateway Station' : 'International'}`,
       estimatedCost: Math.round(budget * 0.42),
       rating: '4.8 / 5.0',
-      layover: 'Nonstop (Optimized schedule)',
+      layover: isFictional ? 'Speculative High-Speed Vessel' : 'Nonstop (Optimized schedule)',
     },
     hotels: {
-      name: `${destination.split(',')[0]} Sanctuary Boutique Ryokan & Suites`,
-      neighborhood: `${destination.split(',')[0]} Historic District`,
+      name: isFictional ? `${destination.split(',')[0]} Deep-Dome Ocean Sanctuary` : `${destination.split(',')[0]} Sanctuary Boutique Ryokan & Suites`,
+      neighborhood: isFictional ? 'Coral Citadel District' : `${destination.split(',')[0]} Historic District`,
       estimatedCost: Math.round(budget * 0.38),
       nights: durationDays,
       rating: '4.9 / 5.0',
-      perks: ['Onsen Hot Springs Access', 'Complimentary Gourmet Breakfast', 'Concierge Service'],
+      perks: isFictional
+        ? ['Pressurized Oceanarium Suite', 'Sub-aquatic Guided Excursions', 'Zero-G Hydrotherapy']
+        : ['Onsen Hot Springs Access', 'Complimentary Gourmet Breakfast', 'Concierge Service'],
     },
   };
 
@@ -177,6 +185,10 @@ function simulateMultiAgentPipeline(input) {
     },
     days,
     engine: 'deterministic-multi-agent-pipeline',
+    isFictionalDestination: isFictional,
+    fictionalNote: isFictional
+      ? `AI Advisory: '${destination}' identified as a mythological/fictional realm. Agents automatically adapted travel logistics to a speculative themed expedition.`
+      : undefined,
   };
 }
 

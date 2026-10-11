@@ -1,12 +1,28 @@
-import { Plane, Building2, Wallet, CheckCircle2, Star, ShieldCheck, Sparkles, MapPin } from 'lucide-react';
+import { Plane, Building2, Wallet, CheckCircle2, Star, ShieldCheck, Sparkles, MapPin, Compass } from 'lucide-react';
 
-export default function TripSummaryCard({ summary, destination, travelers, budget }) {
+export default function TripSummaryCard({ summary, destination, travelers, budget, isFictionalDestination, fictionalNote }) {
   if (!summary) return null;
 
   const { flights, hotels, totalEstimate, activitiesEstimatedCost, emergencyBuffer } = summary;
 
   return (
     <div className="space-y-6">
+      {/* Fictional Destination Advisory Card */}
+      {isFictionalDestination && (
+        <div className="bg-gradient-to-r from-purple-950/60 to-indigo-950/60 border border-purple-500/30 rounded-3xl p-5 shadow-xl backdrop-blur-md">
+          <div className="flex items-start space-x-3">
+            <div className="p-2 rounded-xl bg-purple-500/20 text-purple-300 border border-purple-500/30 shrink-0">
+              <Compass className="w-5 h-5" />
+            </div>
+            <div>
+              <h4 className="text-xs font-bold text-purple-200">Mythological / Fictional Realm</h4>
+              <p className="text-[11px] text-purple-300/80 mt-1 leading-relaxed">
+                {fictionalNote || "Destination recognized as a mythical or fantasy realm. AI Agents calibrated travel logistics to a speculative themed expedition."}
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
       {/* Flight Estimate Card */}
       <div className="bg-slate-900/80 border border-slate-800 rounded-3xl p-6 shadow-xl backdrop-blur-md relative overflow-hidden group hover:border-slate-700 transition-all">
         <div className="flex items-center justify-between mb-4">

@@ -17,11 +17,15 @@ export async function createPlan(req, res, next) {
       });
     }
 
-    if (budget && isNaN(Number(budget))) {
-      return res.status(400).json({
-        success: false,
-        message: 'Budget must be a valid numeric amount.',
-      });
+    if (budget !== undefined) {
+      const numBudget = Number(budget);
+      if (isNaN(numBudget) || numBudget <= 0) {
+        return res.status(400).json({
+          success: false,
+          code: 'INVALID_BUDGET',
+          message: 'Budget must be greater than $0. Real-world flights and accommodations require a viable budget threshold (minimum $100 recommended).',
+        });
+      }
     }
 
     // Execute multi-agent AI pipeline

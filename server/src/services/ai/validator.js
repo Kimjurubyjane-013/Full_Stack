@@ -131,5 +131,7 @@ export function validateTravelPlan(rawPlan, originalInput = {}) {
     days,
     generatedAt: new Date().toISOString(),
     validated: true,
+    isFictionalDestination: Boolean(rawPlan.isFictionalDestination),
+    fictionalNote: rawPlan.fictionalNote || undefined,
   };
 }

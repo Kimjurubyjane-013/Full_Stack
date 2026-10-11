@@ -44,3 +44,9 @@ ehthumbs.db
 coverage/
 .nyc_output/
 *.lcov
+
+# Local Database Files
+server/data/*.json
+*.sqlite
+*.sqlite3
+*.db

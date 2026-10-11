@@ -4,8 +4,8 @@ import { api } from '../services/api';
 const AppContext = createContext(null);
 
 export function AppProvider({ children }) {
-  // Navigation state: 'landing' | 'dashboard'
-  const [currentPage, setCurrentPage] = useState('landing');
+  // Navigation state: 'planner' | 'landing' | 'dashboard'
+  const [currentPage, setCurrentPage] = useState('planner');
   const [activeTab, setActiveTab] = useState('overview');
 
   // Backend connection state

@@ -6,6 +6,7 @@ import Sidebar from './components/dashboard/Sidebar';
 import Header from './components/dashboard/Header';
 import LandingPage from './pages/LandingPage';
 import DashboardPage from './pages/DashboardPage';
+import TravelPlannerPage from './pages/TravelPlannerPage';
 
 function AppContent() {
   const { currentPage } = useApp();
@@ -14,12 +15,21 @@ function AppContent() {
     <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans selection:bg-indigo-500/30 selection:text-indigo-300">
       <Navbar />
 
-      {currentPage === 'landing' ? (
+      {currentPage === 'planner' && (
+        <div className="flex-1">
+          <TravelPlannerPage />
+          <Footer />
+        </div>
+      )}
+
+      {currentPage === 'landing' && (
         <div className="flex-1">
           <LandingPage />
           <Footer />
         </div>
-      ) : (
+      )}
+
+      {currentPage === 'dashboard' && (
         <div className="flex-1 flex overflow-hidden">
           {/* Dashboard Left Sidebar */}
           <Sidebar />

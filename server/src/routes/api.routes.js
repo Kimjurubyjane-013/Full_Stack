@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import authRoutes from './auth.routes.js';
 import itemRoutes from './item.routes.js';
+import planRoutes from './plan.routes.js';
 
 const router = Router();
 
@@ -13,6 +14,7 @@ router.get('/status', (req, res) => {
     endpoints: {
       auth: '/api/auth',
       items: '/api/items',
+      plan: '/api/plan',
       health: '/health',
     },
     timestamp: new Date().toISOString(),
@@ -22,5 +24,6 @@ router.get('/status', (req, res) => {
 // Sub-routers
 router.use('/auth', authRoutes);
 router.use('/items', itemRoutes);
+router.use('/plan', planRoutes);
 
 export default router;
